@@ -2,7 +2,7 @@
 
 [简体中文](https://github.com/malongshuai/pornhub_video_downloader/blob/main/README_CN.md)
 
-Download pornhub videos.
+Parse and Download pornhub videos.
 
 # Usage
 
@@ -42,6 +42,7 @@ Specific options:
                                      if hls, ts files will merge to mp4
     -d, --delete                     delete tmp ts files after download
                                      (only valid with `-t hls')
+        --parse                      don't download, only parse the url, and display the parse result
         --debug                      debug
 
 Common options:
@@ -72,6 +73,19 @@ gethub 'https://cn.pornhub.com/view_video.php?viewkey=ph60b5d9228a754'
 
 # download mp4 file directly, this may download the low quality video.
 gethub -t mp4 'https://cn.pornhub.com/view_video.php?viewkey=ph60b5d9228a754'
+
+# don't download anything, only parse the video info
+gethub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' --parse -p PROXY
+```
+
+# update
+
+Download or `git clone` the latest version of `pornhub_video_downloader.gem`, then: 
+
+```bash
+$ gem install ./pornhub_video_downloader.gem
+$ gem cleanup pornhub_video_downloader
+$ rm -rf ./pornhub_video_downloader.gem
 ```
 
 # 忠告

@@ -1,6 +1,6 @@
 # pornhub_video_downloader
 
-pornhub视频下载工具。
+pornhub视频下载和解析工具。
 
 # 用法描述
 
@@ -39,6 +39,7 @@ Specific options:
                                      if hls, ts files will merge to mp4
     -d, --delete                     delete tmp ts files after download
                                      (only valid with `-t hls')
+        --parse                      don't download, only parse the url, and display the parse result
         --debug                      debug
 
 Common options:
@@ -70,6 +71,19 @@ gethub 'https://cn.pornhub.com/view_video.php?viewkey=ph60b5d9228a754'
 
 # 直接下载mp4格式，这种方式可能会比较慢，下载的视频清晰度可能也不是最高的
 gethub -t mp4 'https://cn.pornhub.com/view_video.php?viewkey=ph60b5d9228a754'
+
+# 不下载，只用来解析给定URL相关的信息
+gethub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' --parse -p PROXY
+```
+
+# 更新
+
+下载或`git clone`最新版本的`pornhub_video_downloader.gem`，然后执行：
+
+```bash
+$ gem install ./pornhub_video_downloader.gem
+$ gem cleanup pornhub_video_downloader
+$ rm -rf ./pornhub_video_downloader.gem
 ```
 
 # 忠告
