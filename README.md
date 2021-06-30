@@ -6,7 +6,7 @@ Download pornhub videos.
 
 # Usage
 
-Note: not support Windows.
+Note: Windows is not supported.
 
 This tool write in ruby, and use `aria2c` as download tool, use `ffmpeg` to merge ts to mp4. So, install `ruby`, `aria2` and `ffmpeg` first.
 
