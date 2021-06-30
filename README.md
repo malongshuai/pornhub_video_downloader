@@ -1,5 +1,7 @@
 # pornhub_video_downloader
 
+[简体中文](https://github.com/malongshuai/pornhub_video_downloader/blob/main/README_CN)
+
 Download pornhub videos.
 
 # Usage
