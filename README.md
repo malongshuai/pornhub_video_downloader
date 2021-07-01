@@ -20,9 +20,9 @@ Then, download the gem file `pornhub_video_downloader.gem`, or git clone.
 $ git clone https://github.com/malongshuai/pornhub_video_downloader.git
 $ cd pornhub_video_downloader
 
-# if your `gem install` is slow, change gem source, 
+# if your `gem install` is slow, setting gem source, 
 # if you are in China, you can: 
-#   gem sources --add https://gems.ruby-china.com --remove https://rubygems.org/
+#   gem gem install ./pornhub_video_downloader.gem -s https://gems.ruby-china.com 
 $ gem install ./pornhub_video_downloader.gem
 ```
 
@@ -92,9 +92,12 @@ gethub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' --P -L -p
 Download or `git clone` the latest version of `pornhub_video_downloader.gem`, then: 
 
 ```bash
+$ git clone https://github.com/malongshuai/pornhub_video_downloader.git
+$ cd pornhub_video_downloader
+
+# or: ./install
 $ gem install ./pornhub_video_downloader.gem
 $ gem cleanup pornhub_video_downloader
-$ rm -rf ./pornhub_video_downloader.gem
 ```
 
 # 忠告

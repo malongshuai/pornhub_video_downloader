@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
+
 gem install ./pornhub_video_downloader*.gem
-gem cleanup pornhub_video_downloader
+rm -rf ./pornhub_video_downloader*.gem
 echo "command 'gethub' is available, use \`gethub --help' to see how to use"
 

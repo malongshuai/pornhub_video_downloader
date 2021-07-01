@@ -18,8 +18,9 @@ $ sudo apt install ruby aria2 ffmpeg
 $ git clone https://github.com/malongshuai/pornhub_video_downloader.git
 $ cd pornhub_video_downloader
 
-# 如果下面的`gem install`很慢，修改gem源，例如： 
-#   gem sources --add https://gems.ruby-china.com --remove https://rubygems.org/
+# 如果下面的`gem install`很慢，修改gem源
+# 在中国，可使用下面的命令加速安装: 
+#   gem gem install ./pornhub_video_downloader.gem -s https://gems.ruby-china.com 
 $ gem install ./pornhub_video_downloader.gem
 ```
 
@@ -90,9 +91,12 @@ gethub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' --P -L -p
 下载或`git clone`最新版本的`pornhub_video_downloader.gem`，然后执行：
 
 ```bash
+$ git clone https://github.com/malongshuai/pornhub_video_downloader.git
+$ cd pornhub_video_downloader
+
+# 或者：./install.sh
 $ gem install ./pornhub_video_downloader.gem
 $ gem cleanup pornhub_video_downloader
-$ rm -rf ./pornhub_video_downloader.gem
 ```
 
 # 忠告
