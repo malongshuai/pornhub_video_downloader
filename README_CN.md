@@ -27,34 +27,41 @@ $ gem install ./pornhub_video_downloader.gem
 
 ```bash
 $ gethub --help
-Usage: gethub [options] [PAGE_URL]
+Usage: gethub [options] [PORNHUB_PAGE_URL]
 
 Specific options:
     -h, --page-url URL               Pornhub Page URL
-    -o, --output PATH                download file path
-                                     if missing, will use video title as filename
     -p, --proxy PROXY                http proxy
                                      (if missing, will try env variables)
+
+Download options:
+    -o, --output PATH                download file path
+                                     if missing, will use video title as filename
     -t, --type TYPE                  which type(mp4 or hls) to download, default: hls
                                      if hls, ts files will merge to mp4
     -d, --delete                     delete tmp ts files after download
                                      (only valid with `-t hls')
-        --parse                      don't download, only parse the url, and display the parse result
-        --debug                      debug
+
+Parse options:
+    -P, --parse                      don't download, only parse the url
+                                     list a few of ts url, use -T to list all
+    -T, --ts-list                    used with -P, display all ts urls
+    -L, --ts-list-only               used with -P, only display all ts urls
 
 Common options:
+    -D, --debug                      debug
+    -V, --version                    show version info
         --help                       print this help message
-        --version                    show version info
 
 Note:
-1. Be sure `aria2' had installed, e.g. `sudo apt install aria2'
+1. Be sure `aria2' and `ffmpeg' are installed, e.g. `sudo apt install aria2'
 2. If download mp4 format(`-t mp4'), may be it is not the highest quality one
 3. If download hls format(`-t hls'), it will download the highest quality one,
    but it will save ts files in the same directory, use `-d' to delete this dir,
    or delete by yourself
 ```
 
-## 下载pornhub视频的一些示例
+## 一些使用示例
 
 ```bash
 # 设置代理，-t hls(也是默认行为)表示下载hls格式的ts文件，ts文件片段保存在同目录下的同名子目录，
@@ -74,6 +81,8 @@ gethub -t mp4 'https://cn.pornhub.com/view_video.php?viewkey=ph60b5d9228a754'
 
 # 不下载，只用来解析给定URL相关的信息
 gethub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' --parse -p PROXY
+gethub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' --P -T -p PROXY
+gethub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' --P -L -p PROXY
 ```
 
 # 更新
@@ -88,4 +97,4 @@ $ rm -rf ./pornhub_video_downloader.gem
 
 # 忠告
 
-小心肾.
+小心肾。
