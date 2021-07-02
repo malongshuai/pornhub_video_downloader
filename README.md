@@ -26,9 +26,11 @@ $ cd pornhub_video_downloader
 $ gem install ./pornhub_video_downloader.gem
 ```
 
-After install, `gethub` command is avaliable: 
+After install, download tool `gethub` command and parse tool `parsehub` command are avaliable: 
 
-```bash
+Note: `gethub` command can also be used for parsing, it's parse results are same as `parsehub`.
+
+```
 $ gethub --help
 Usage: gethub [options] [PORNHUB_PAGE_URL]
 
@@ -64,6 +66,27 @@ Note:
    or delete by yourself
 ```
 
+```
+$ parsehub --help
+Usage: parsehub [options] [PORNHUB_PAGE_URL]
+
+Specific options:
+    -h, --page-url URL               Pornhub Page URL
+    -p, --proxy PROXY                http proxy
+                                     (if missing, will try env variables)
+
+Parse options:
+    -P, --parse                      don't download, only parse the url
+                                     list a few of ts url, use -T to list all
+    -T, --ts-list                    used with -P, display all ts urls
+    -L, --ts-list-only               used with -P, only display all ts urls
+
+Common options:
+    -D, --debug                      debug
+    -V, --version                    show version info
+        --help                       print this help message
+```
+
 ## examples
 
 ```bash
@@ -83,8 +106,12 @@ gethub -t mp4 'https://cn.pornhub.com/view_video.php?viewkey=ph60b5d9228a754'
 
 # don't download anything, only parse the video info
 gethub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' --parse -p PROXY
-gethub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' --P -T -p PROXY
-gethub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' --P -L -p PROXY
+gethub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' -P -T -p PROXY
+gethub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' -P -L -p PROXY
+
+parsehub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' -p PROXY
+parsehub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' -T -p PROXY
+parsehub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' -L -p PROXY
 ```
 
 # update
