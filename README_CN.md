@@ -74,8 +74,6 @@ Specific options:
                                      (if missing, will try env variables)
 
 Parse options:
-    -P, --parse                      don't download, only parse the url
-                                     list a few of ts url, use -T to list all
     -T, --ts-list                    used with -P, display all ts urls
     -L, --ts-list-only               used with -P, only display all ts urls
 
