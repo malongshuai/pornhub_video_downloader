@@ -120,7 +120,7 @@ Download or `git clone` the latest version of `pornhub_video_downloader.gem`, th
 $ git clone https://github.com/malongshuai/pornhub_video_downloader.git
 $ cd pornhub_video_downloader
 
-# or: ./install
+# or: ./install.sh
 $ gem install ./pornhub_video_downloader.gem
 $ gem cleanup pornhub_video_downloader
 ```
