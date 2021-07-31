@@ -22,7 +22,7 @@ $ cd pornhub_video_downloader
 
 # if your `gem install` is slow, setting gem source, 
 # if you are in China, you can: 
-#   gem gem install ./pornhub_video_downloader.gem -s https://gems.ruby-china.com 
+#   gem install ./pornhub_video_downloader.gem -s https://gems.ruby-china.com 
 $ gem install ./pornhub_video_downloader.gem
 ```
 

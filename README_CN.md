@@ -20,7 +20,7 @@ $ cd pornhub_video_downloader
 
 # 如果下面的`gem install`很慢，修改gem源
 # 在中国，可使用下面的命令加速安装: 
-#   gem gem install ./pornhub_video_downloader.gem -s https://gems.ruby-china.com 
+#   gem install ./pornhub_video_downloader.gem -s https://gems.ruby-china.com 
 $ gem install ./pornhub_video_downloader.gem
 ```
 
