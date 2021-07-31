@@ -12,7 +12,7 @@ pornhub视频下载和解析工具。
 $ sudo apt install ruby aria2 ffmpeg
 ```
 
-然后克隆，或单独下载`pornhub_video_downloader.gem`。
+然后克隆，或单独下载`pornhub_video_downloader-VERSION.gem`。
 
 ```bash
 $ git clone https://github.com/malongshuai/pornhub_video_downloader.git
@@ -20,8 +20,8 @@ $ cd pornhub_video_downloader
 
 # 如果下面的`gem install`很慢，修改gem源
 # 在中国，可使用下面的命令加速安装: 
-#   gem install ./pornhub_video_downloader.gem -s https://gems.ruby-china.com 
-$ gem install ./pornhub_video_downloader.gem
+#   gem install ./pornhub_video_downloader*.gem -s https://gems.ruby-china.com 
+$ gem install ./pornhub_video_downloader*.gem
 ```
 
 安装之后，就可以使用`gethub`命令用来下载视频，或使用`parsehub`来解析视频信息。
@@ -120,7 +120,7 @@ $ git clone https://github.com/malongshuai/pornhub_video_downloader.git
 $ cd pornhub_video_downloader
 
 # 或者：./install.sh
-$ gem install ./pornhub_video_downloader.gem
+$ gem install ./pornhub_video_downloader*.gem
 $ gem cleanup pornhub_video_downloader
 ```
 

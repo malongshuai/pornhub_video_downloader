@@ -14,7 +14,7 @@ This tool write in ruby, and use `aria2c` as download tool, use `ffmpeg` to merg
 $ sudo apt install ruby aria2 ffmpeg
 ```
 
-Then, download the gem file `pornhub_video_downloader.gem`, or git clone.
+Then, download the gem file `pornhub_video_downloader-VERSION.gem`, or git clone.
 
 ```bash
 $ git clone https://github.com/malongshuai/pornhub_video_downloader.git
@@ -22,8 +22,8 @@ $ cd pornhub_video_downloader
 
 # if your `gem install` is slow, setting gem source, 
 # if you are in China, you can: 
-#   gem install ./pornhub_video_downloader.gem -s https://gems.ruby-china.com 
-$ gem install ./pornhub_video_downloader.gem
+#   gem install ./pornhub_video_downloader*.gem -s https://gems.ruby-china.com 
+$ gem install ./pornhub_video_downloader*.gem
 ```
 
 After install, download tool `gethub` command and parse tool `parsehub` command are avaliable: 
@@ -121,7 +121,7 @@ $ git clone https://github.com/malongshuai/pornhub_video_downloader.git
 $ cd pornhub_video_downloader
 
 # or: ./install.sh
-$ gem install ./pornhub_video_downloader.gem
+$ gem install ./pornhub_video_downloader*.gem
 $ gem cleanup pornhub_video_downloader
 ```
 
