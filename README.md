@@ -14,23 +14,21 @@ This tool write in ruby, and use `aria2c` as download tool, use `ffmpeg` to merg
 $ sudo apt install ruby aria2 ffmpeg
 ```
 
-Then, download the gem file `pornhub_video_downloader-VERSION.gem`, or git clone.
+Then, download the gem file `pornhub_video_downloader.gem`, or git clone.
 
 ```bash
 $ git clone https://github.com/malongshuai/pornhub_video_downloader.git
 $ cd pornhub_video_downloader
 
-# if your `gem install` is slow, setting gem source, 
+# if your `gem install` is slow, change gem source, 
 # if you are in China, you can: 
-#   gem install ./pornhub_video_downloader*.gem -s https://gems.ruby-china.com 
-$ gem install ./pornhub_video_downloader*.gem
+#   gem sources --add https://gems.ruby-china.com --remove https://rubygems.org/
+$ gem install ./pornhub_video_downloader.gem
 ```
 
-After install, download tool `gethub` command and parse tool `parsehub` command are avaliable: 
+After install, `gethub` command is avaliable: 
 
-Note: `gethub` command can also be used for parsing, it's parse results are same as `parsehub`.
-
-```
+```bash
 $ gethub --help
 Usage: gethub [options] [PORNHUB_PAGE_URL]
 
@@ -38,6 +36,7 @@ Specific options:
     -h, --page-url URL               Pornhub Page URL
     -p, --proxy PROXY                http proxy
                                      (if missing, will try env variables)
+    -q, --quality QUALITY            which quality to download/parse, value like: 480/720/1080/
 
 Download options:
     -o, --output PATH                download file path
@@ -66,32 +65,13 @@ Note:
    or delete by yourself
 ```
 
-```
-$ parsehub --help
-Usage: parsehub [options] [PORNHUB_PAGE_URL]
-
-Specific options:
-    -h, --page-url URL               Pornhub Page URL
-    -p, --proxy PROXY                http proxy
-                                     (if missing, will try env variables)
-
-Parse options:
-    -T, --ts-list                    used with -P, display all ts urls
-    -L, --ts-list-only               used with -P, only display all ts urls
-
-Common options:
-    -D, --debug                      debug
-    -V, --version                    show version info
-        --help                       print this help message
-```
-
 ## examples
 
 ```bash
 # setting proxy, and download ts files, then merge ts files to mp4, `-d` means remove these ts files after merging.
-gethub -h 'https://cn.pornhub.com/view_video.php?viewkey=ph60b5d9228a754' -p http://127.0.0.1:8118 -t hls -o new.mp4 -d
+gethub -h 'https://cn.pornhub.com/view_video.php?viewkey=ph60b5d9228a754' -p http://127.0.0.1:8118 -t hls -q 1080 -o new.mp4 -d
 # or
-gethub -p http://127.0.0.1:8118 -t hls -o new.mp4 -d 'https://cn.pornhub.com/view_video.php?viewkey=ph60b5d9228a754'
+gethub -p http://127.0.0.1:8118 -t hls -q 1080 -o new.mp4 -d 'https://cn.pornhub.com/view_video.php?viewkey=ph60b5d9228a754'
 
 # use env proxy variable: http_proxy or HTTP_PROXY, or ignore proxy
 gethub -h 'https://cn.pornhub.com/view_video.php?viewkey=ph60b5d9228a754' -t hls -o new.mp4
@@ -104,12 +84,8 @@ gethub -t mp4 'https://cn.pornhub.com/view_video.php?viewkey=ph60b5d9228a754'
 
 # don't download anything, only parse the video info
 gethub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' --parse -p PROXY
-gethub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' -P -T -p PROXY
-gethub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' -P -L -p PROXY
-
-parsehub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' -p PROXY
-parsehub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' -T -p PROXY
-parsehub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' -L -p PROXY
+gethub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' --P -T -p PROXY
+gethub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' --P -L -p PROXY
 ```
 
 # update
@@ -117,14 +93,8 @@ parsehub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' -L -p P
 Download or `git clone` the latest version of `pornhub_video_downloader.gem`, then: 
 
 ```bash
-$ git clone https://github.com/malongshuai/pornhub_video_downloader.git
-$ cd pornhub_video_downloader
-
-# or: ./install.sh
-$ gem install ./pornhub_video_downloader*.gem
+$ gem install ./pornhub_video_downloader.gem
 $ gem cleanup pornhub_video_downloader
+$ rm -rf ./pornhub_video_downloader.gem
 ```
 
-# 忠告
-
-小心肾。

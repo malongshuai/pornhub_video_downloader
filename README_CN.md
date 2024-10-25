@@ -12,30 +12,28 @@ pornhub视频下载和解析工具。
 $ sudo apt install ruby aria2 ffmpeg
 ```
 
-然后克隆，或单独下载`pornhub_video_downloader-VERSION.gem`。
+然后克隆，或单独下载`pornhub_video_downloader.gem`。
 
 ```bash
 $ git clone https://github.com/malongshuai/pornhub_video_downloader.git
 $ cd pornhub_video_downloader
 
-# 如果下面的`gem install`很慢，修改gem源
-# 在中国，可使用下面的命令加速安装: 
-#   gem install ./pornhub_video_downloader*.gem -s https://gems.ruby-china.com 
-$ gem install ./pornhub_video_downloader*.gem
+# 如果下面的`gem install`很慢，修改gem源，例如： 
+#   gem sources --add https://gems.ruby-china.com --remove https://rubygems.org/
+$ gem install ./pornhub_video_downloader.gem
 ```
 
-安装之后，就可以使用`gethub`命令用来下载视频，或使用`parsehub`来解析视频信息。
+安装之后，就可以使用`gethub`命令用来下载视频。
 
-注：`gethub`也具有解析功能，解析出来的结果和`parsehub`的结果一样。
-
-```
+```bash
 $ gethub --help
 Usage: gethub [options] [PORNHUB_PAGE_URL]
 
-Specific options: 
+Specific options:
     -h, --page-url URL               Pornhub Page URL
     -p, --proxy PROXY                http proxy
                                      (if missing, will try env variables)
+    -q, --quality QUALITY            which quality to download/parse, value like: 480/720/1080/
 
 Download options:
     -o, --output PATH                download file path
@@ -64,33 +62,14 @@ Note:
    or delete by yourself
 ```
 
-```
-$ parsehub --help
-Usage: parsehub [options] [PORNHUB_PAGE_URL]
-
-Specific options:
-    -h, --page-url URL               Pornhub Page URL
-    -p, --proxy PROXY                http proxy
-                                     (if missing, will try env variables)
-
-Parse options:
-    -T, --ts-list                    used with -P, display all ts urls
-    -L, --ts-list-only               used with -P, only display all ts urls
-
-Common options:
-    -D, --debug                      debug
-    -V, --version                    show version info
-        --help                       print this help message
-```
-
 ## 一些使用示例
 
 ```bash
 # 设置代理，-t hls(也是默认行为)表示下载hls格式的ts文件，ts文件片段保存在同目录下的同名子目录，
 # 下载完ts文件后会自动合并成mp4文件，指定-d选项表示，合并完成后自动删除保存ts文件片段的目录
-gethub -h 'https://cn.pornhub.com/view_video.php?viewkey=ph60b5d9228a754' -p http://127.0.0.1:8118 -t hls -o new.mp4 -d
+gethub -h 'https://cn.pornhub.com/view_video.php?viewkey=ph60b5d9228a754' -p http://127.0.0.1:8118 -t hls -q 1080 -o new.mp4 -d
 # 与上等价
-gethub -p http://127.0.0.1:8118 -t hls -o new.mp4 -d 'https://cn.pornhub.com/view_video.php?viewkey=ph60b5d9228a754'
+gethub -p http://127.0.0.1:8118 -t hls -q 1080 -o new.mp4 -d 'https://cn.pornhub.com/view_video.php?viewkey=ph60b5d9228a754'
 
 # 使用环境变量中的代理选项: http_proxy 或 HTTP_PROXY，如果未设置这些变量，将不使用代理
 gethub -h 'https://cn.pornhub.com/view_video.php?viewkey=ph60b5d9228a754' -t hls -o new.mp4
@@ -103,12 +82,8 @@ gethub -t mp4 'https://cn.pornhub.com/view_video.php?viewkey=ph60b5d9228a754'
 
 # 不下载，只用来解析给定URL相关的信息
 gethub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' --parse -p PROXY
-gethub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' -P -T -p PROXY
-gethub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' -P -L -p PROXY
-
-parsehub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' -p PROXY
-parsehub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' -T -p PROXY
-parsehub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' -L -p PROXY
+gethub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' --P -T -p PROXY
+gethub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' --P -L -p PROXY
 ```
 
 # 更新
@@ -116,12 +91,9 @@ parsehub 'https://cn.pornhub.com/view_video.php?viewkey=ph5db706f7bf38e' -L -p P
 下载或`git clone`最新版本的`pornhub_video_downloader.gem`，然后执行：
 
 ```bash
-$ git clone https://github.com/malongshuai/pornhub_video_downloader.git
-$ cd pornhub_video_downloader
-
-# 或者：./install.sh
-$ gem install ./pornhub_video_downloader*.gem
+$ gem install ./pornhub_video_downloader.gem
 $ gem cleanup pornhub_video_downloader
+$ rm -rf ./pornhub_video_downloader.gem
 ```
 
 # 忠告
